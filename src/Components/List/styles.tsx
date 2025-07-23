@@ -4,7 +4,7 @@ import { device } from "../../assets/globalStyles";
 export const SList = styled.ul`
   display: flex;
 
-  @media ${device.tablet} {
+  @media ${device.tabletMax} {
     flex-direction: column;
   }
 `;
