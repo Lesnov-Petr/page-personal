@@ -13,61 +13,13 @@ export const color = {
   white: "white",
 };
 
-//======================== Шрифты ========================================
-const fontsFamaly = {
-  logo: "Amaranth",
-  standart: "Poppins",
-};
-const sizeFonts = {
-  mobile: { standart: "14px" },
-  desktop: {
-    standart: "22px",
-    title: "18px",
-    logo: "64px",
-  },
-  table: {
-    standart: "14px",
-    title: "18px",
-    logo: "48px",
-  },
-};
-export const fontMixin = {
-  logo: css`
-    font-family: ${fontsFamaly.logo};
-    font-size: ${sizeFonts.desktop.logo};
-    font-weight: ${400};
-    line-height: ${1.21};
-    color: white;
-  `,
-  standart: css`
-    font-family: ${fontsFamaly.standart};
-    font-size: ${sizeFonts.desktop.standart};
-    font-weight: ${400};
-    line-height: ${1};
-  `,
-  title: css`
-    font-family: ${fontsFamaly.standart};
-    font-size: ${sizeFonts.desktop.title};
-    font-weight: ${700};
-    line-height: ${1.21};
-    letter-spacing: ${"1.5px"};
-  `,
-  subTitle: css`
-    font-family: ${fontsFamaly.standart};
-    font-size: ${sizeFonts.desktop.title};
-    font-weight: ${700};
-    line-height: auto;
-    letter-spacing: ${"6px"};
-  `,
-};
-
 //======================== Размеры девайса ===============================
 const size = {
   mobileS: "320px",
   mobileM: "375px",
-  mobileL: "425px",
-  tablet: "768px",
-  laptop: "1024px",
+  mobileL: "767px",
+  tabletS: "768px",
+  tabletL: "1279px",
   laptopS: "1280px",
   laptopM: "1366px",
   laptopL: "1440px",
@@ -77,17 +29,110 @@ const size = {
 };
 
 export const device = {
-  mobileS: `max-width: ${size.mobileS}`,
-  mobileM: `max-width: ${size.mobileM}`,
-  mobileL: `max-width: ${size.mobileL}`,
-  tablet: `max-width: ${size.tablet}`,
-  laptop: `max-width: ${size.laptop}`,
-  laptopS: `max-width: ${size.laptopS}`,
-  laptopM: `max-width: ${size.laptopM}`,
-  laptopL: `max-width: ${size.laptopL}`,
-  desktopS: `max-width: ${size.desktopS}`,
-  desktopM: `max-width: ${size.desktopM}`,
-  desktopL: `max-width: ${size.desktopL}`,
+  mobile: `(max-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tabletS}) and (max-width: ${size.tabletL})`,
+  laptop: `(min-width: ${size.laptopS}) and (max-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktopS})`,
+};
+
+type DeviceType = keyof typeof device;
+
+export const media = (
+  deviceType: DeviceType,
+  styles: TemplateStringsArray | string
+) => {
+  return `@media ${device[deviceType]} { ${styles} }`;
+};
+
+//======================== Шрифты ========================================
+const fontsFamaly = {
+  logo: "Amaranth",
+  standart: "Poppins",
+};
+const sizeFonts = {
+  desktop: {
+    title: "22px",
+    subtitle: "18px",
+    standart: "16px",
+    logo: "64px",
+  },
+  tablet: {
+    title: "18px",
+    subtitle: "18px",
+    standart: "14px",
+    logo: "48px",
+  },
+  mobile: {
+    title: "18px",
+    subtitle: "16px",
+    standart: "14px",
+    logo: "30px",
+  },
+};
+export const fontMixin = {
+  logo: css`
+    font-family: ${fontsFamaly.logo};
+    font-weight: ${400};
+    line-height: ${1.21};
+    color: white;
+
+    font-size: ${sizeFonts.desktop.logo};
+
+    @media (${device.tablet}) {
+      font-size: ${sizeFonts.tablet.logo};
+    }
+
+    @media (${device.mobile}) {
+      font-size: ${sizeFonts.mobile.logo};
+    }
+  `,
+  standart: css`
+    font-family: ${fontsFamaly.standart};
+    font-weight: ${400};
+    line-height: ${1};
+
+    font-size: ${sizeFonts.desktop.standart};
+
+    @media (${device.tablet}) {
+      font-size: ${sizeFonts.tablet.standart};
+    }
+
+    @media (${device.mobile}) {
+      font-size: ${sizeFonts.mobile.standart};
+    }
+  `,
+  title: css`
+    font-family: ${fontsFamaly.standart};
+    font-weight: ${700};
+    line-height: ${1.21};
+    letter-spacing: ${"1.5px"};
+
+    font-size: ${sizeFonts.desktop.title};
+
+    @media (${device.tablet}) {
+      font-size: ${sizeFonts.tablet.title};
+    }
+
+    @media (${device.mobile}) {
+      font-size: ${sizeFonts.mobile.title};
+    }
+  `,
+  subTitle: css`
+    font-family: ${fontsFamaly.standart};
+    font-weight: ${700};
+    line-height: auto;
+    letter-spacing: ${"6px"};
+
+    font-size: ${sizeFonts.desktop.title};
+
+    @media (${device.tablet}) {
+      font-size: ${sizeFonts.tablet.standart};
+    }
+
+    @media (${device.mobile}) {
+      font-size: ${sizeFonts.mobile.standart};
+    }
+  `,
 };
 
 //======================== Глобальные стили ===============================

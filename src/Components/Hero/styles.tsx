@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color, fontMixin } from "../../assets/globalStyles";
+import { color, device, fontMixin } from "../../assets/globalStyles";
 import bgImg from "../../assets/images/bg-image.jpg";
 import { ReactComponent as LineIcon } from "../../assets/images/line.svg";
 import { ReactComponent as Arrow } from "../../assets/images/arrow.svg";
@@ -19,13 +19,19 @@ export const SHero = styled.div.attrs({ className: "hero" })`
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 0 80px;
+
+  @media ${device.tablet} {
+    padding: 0 40px;
+  }
+
+  @media ${device.desktop} {
+    padding: 0 80px;
+  }
 `;
 
 export const SBox = styled.div.attrs({ className: "hero__box" })`
   display: flex;
   justify-content: space-between;
-  padding-left: 110px;
 `;
 
 export const SBoxTitle = styled.div.attrs({ className: "hero__titleBox" })`

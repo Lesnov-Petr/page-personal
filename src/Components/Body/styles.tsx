@@ -6,6 +6,7 @@ import { ReactComponent as ArrowIcon } from "../../assets/images/arrow.svg";
 export const SBody = styled.div`
   display: flex;
   justify-content: center;
+  width: 100%;
   margin-top: 80px;
   margin-bottom: 200px;
 `;
@@ -52,8 +53,6 @@ export const SItem = styled.li`
 
 export const STitle = styled.h3.attrs({ className: "body__title" })`
   ${fontMixin.logo};
-  margin-bottom: 27px;
-  margin-top: 27px;
 `;
 
 export const SSubTitle = styled.h4`
@@ -80,7 +79,7 @@ export const SLineIcon = styled(LineIcon)`
   path {
     fill: currentColor;
   }
-  width: 70px;
+  width: 10%;
   height: 2px;
 `;
 

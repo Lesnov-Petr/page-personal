@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { List } from "../List/List";
 import { NavItem } from "../../interfaces";
-import { SNavigation } from "./styles";
+import { BurgerButton, SNavigation } from "./styles";
 
 interface NavigationProps {
   items?: NavItem[];
@@ -13,21 +14,33 @@ export const Navigation: React.FC<NavigationProps> = ({
   direction,
   margin,
 }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const defaultItems: NavItem[] = [
     { name: "Главная", link: "/" },
     { name: "О себе", link: "/about" },
     { name: "Хобби", link: "/hobby" },
     { name: "Резюме", link: "resume" },
   ];
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <SNavigation $direction={direction}>
-      {
+    <>
+      <BurgerButton
+        onClick={toggleMenu}
+        className={isMenuOpen ? "on" : ""}
+      ></BurgerButton>
+
+      <SNavigation $direction={direction} className={isMenuOpen ? "on" : ""}>
         <List
-          direction={direction}
+          direction={"column"}
           margin={margin}
           list={items || defaultItems}
         />
-      }
-    </SNavigation>
+      </SNavigation>
+    </>
   );
 };
