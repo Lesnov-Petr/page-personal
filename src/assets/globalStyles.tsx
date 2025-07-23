@@ -31,6 +31,7 @@ const size = {
 export const device = {
   mobile: `(max-width: ${size.mobileL})`,
   tablet: `(min-width: ${size.tabletS}) and (max-width: ${size.tabletL})`,
+  tabletMax: `(max-width: ${size.tabletL})`,
   laptop: `(min-width: ${size.laptopS}) and (max-width: ${size.laptopL})`,
   desktop: `(min-width: ${size.desktopS})`,
 };

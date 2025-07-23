@@ -4,7 +4,7 @@ import { fontMixin, color, cubic, device } from "../../assets/globalStyles";
 export const SNavigation = styled.div.attrs({ className: "navigation" })<{}>`
   display: flex;
 
-  @media ${device.tablet} {
+  @media ${device.tabletMax} {
     position: fixed;
     top: 0;
     left: 0;
@@ -35,7 +35,7 @@ export const SItem = styled.li.attrs({ className: "navigation__item" })<{}>`
     margin-left: 0;
   }
 
-  @media ${device.tablet} {
+  @media ${device.tabletMax} {
     margin: 15px 0;
   }
 `;
@@ -48,7 +48,7 @@ export const SLink = styled.a.attrs({ className: "navigation__link" })<{}>`
     color: ${color.accent};
   }
 
-  @media ${device.tablet} {
+  @media ${device.tabletMax} {
     font-size: 24px;
   }
 `;
@@ -66,7 +66,7 @@ export const BurgerButton = styled.button.attrs({ className: "burger-button" })`
   cursor: pointer;
   z-index: 2;
 
-  @media ${device.tablet} {
+  @media ${device.tabletMax} {
     display: block;
   }
 
