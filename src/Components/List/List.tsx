@@ -4,13 +4,12 @@ import { NavItem } from "../../interfaces";
 
 interface ListProps {
   list: NavItem[];
-  direction?: "row" | "column" | undefined;
   margin?: string | undefined;
 }
 
-export const List: React.FC<ListProps> = ({ list, direction, margin }) => {
+export const List: React.FC<ListProps> = ({ list, margin }) => {
   return (
-    <SList $direction={direction}>
+    <SList>
       {list.map((item) => (
         <Item key={item.name} item={item} margin={margin} />
       ))}

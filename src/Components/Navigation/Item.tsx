@@ -6,9 +6,9 @@ interface ItemProps {
   margin: string | undefined;
 }
 
-export const Item: React.FC<ItemProps> = ({ item, margin }) => {
+export const Item: React.FC<ItemProps> = ({ item }) => {
   return (
-    <SItem $margin={margin}>
+    <SItem>
       <SLink href={item.link}>{item.name}</SLink>
     </SItem>
   );

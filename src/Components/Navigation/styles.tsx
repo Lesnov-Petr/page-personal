@@ -1,12 +1,8 @@
 import styled from "styled-components";
 import { fontMixin, color, cubic, device } from "../../assets/globalStyles";
-import exp from "constants";
 
-export const SNavigation = styled.div.attrs({ className: "navigation" })<{
-  $direction?: "row" | "column";
-}>`
+export const SNavigation = styled.div.attrs({ className: "navigation" })<{}>`
   display: flex;
-  flex-direction: ${({ $direction }) => $direction || "row"};
 
   @media ${device.tablet} {
     position: fixed;
@@ -31,11 +27,9 @@ export const SNavigation = styled.div.attrs({ className: "navigation" })<{
   }
 `;
 
-export const SItem = styled.li.attrs({ className: "navigation__item" })<{
-  $margin: string | undefined;
-}>`
+export const SItem = styled.li.attrs({ className: "navigation__item" })<{}>`
   ${fontMixin.standart}
-  margin: ${({ $margin }) => $margin};
+  margin-right: 40px;
 
   &:first-child {
     margin-left: 0;

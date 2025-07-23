@@ -1,6 +1,10 @@
 import styled from "styled-components";
+import { device } from "../../assets/globalStyles";
 
-export const SList = styled.ul<{ $direction?: "row" | "column" }>`
+export const SList = styled.ul`
   display: flex;
-  flex-direction: ${({ $direction }) => $direction || "row"};
+
+  @media ${device.tablet} {
+    flex-direction: column;
+  }
 `;

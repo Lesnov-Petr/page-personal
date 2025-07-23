@@ -229,4 +229,5 @@ export const GlobalStyle = createGlobalStyle`
 	.g-recaptcha {
 		margin-top: 1vh;
 	}
+	
 `;
