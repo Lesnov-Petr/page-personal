@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SLogo = styled.div.attrs({ className: "logotype" })`
+export const SLogo = styled.a.attrs({ className: "logotype" })`
   display: flex;
 `;
 

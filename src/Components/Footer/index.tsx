@@ -4,7 +4,7 @@ import { SFooter } from "./styles";
 const Footer: React.FC<{}> = () => {
   return (
     <SFooter>
-      <LogoSecond style={{ width: "250px", height: "250px" }} />
+      <LogoSecond style={{ width: "30%", height: "20%" }} />
     </SFooter>
   );
 };

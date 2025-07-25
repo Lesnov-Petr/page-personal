@@ -9,6 +9,7 @@ export const SBody = styled.div`
   width: 100%;
   margin-top: 80px;
   margin-bottom: 200px;
+  padding: 0 10px;
 `;
 
 export const SBox = styled.div`
@@ -35,7 +36,7 @@ export const SBoxSubTitle = styled.div`
 `;
 
 export const SList = styled.ul`
-  width: 75vw;
+  /* width: 75vw; */
 `;
 
 export const SItem = styled.li`

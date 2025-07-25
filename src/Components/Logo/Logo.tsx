@@ -8,7 +8,7 @@ interface LogoProps {
 
 export const LogoFirst: React.FC<LogoProps> = ({ style }) => {
   return (
-    <SLogo>
+    <SLogo href="/">
       <SLogoImage src={logoFirst} alt="Logo" style={style} />
     </SLogo>
   );

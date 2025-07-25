@@ -105,8 +105,8 @@ export const BurgerButton = styled.button.attrs({ className: "burger-button" })`
     transition: bottom 0.3s, transform 0.3s 0.15s;
   }
 
-  &:hover::before,
-  &:hover::after {
+  &.on:hover::before,
+  &.on:hover::after {
     background: ${color.accent};
     transition: background 0.3s, transform 0.3s 0.15s;
   }
