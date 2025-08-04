@@ -37,7 +37,10 @@ export default function Hero() {
         <SBoxTitle>
           <SBoxSubTitle>
             <SLineIcon />
-            <SSubTitle>Цитаты</SSubTitle>
+            <SSubTitle>
+              Мы находимся здесь, чтобы внести свой вклад в этот мир. Иначе
+              зачем мы здесь?
+            </SSubTitle>
           </SBoxSubTitle>
 
           <SHeroTitle>Быть Готовым к Вершинам и Не Только</SHeroTitle>

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { List } from "../List/List";
 import { NavItem } from "../../interfaces";
-import { BurgerButton, SNavigation } from "./styles";
+import { BurgerButton, SLink, SList, SNavigation } from "./styles";
 
 interface NavigationProps {
   items?: NavItem[];
@@ -14,7 +13,8 @@ export const Navigation: React.FC<NavigationProps> = ({ items }) => {
     { name: "Главная", link: "/" },
     { name: "О себе", link: "/about" },
     { name: "Хобби", link: "/hobby" },
-    { name: "Резюме", link: "resume" },
+    { name: "Путешествие", link: "/travel" },
+    { name: "Резюме", link: "/resume" },
   ];
 
   useEffect(() => {
@@ -42,7 +42,13 @@ export const Navigation: React.FC<NavigationProps> = ({ items }) => {
       ></BurgerButton>
 
       <SNavigation className={isMenuOpen ? "on" : ""}>
-        <List list={items || defaultItems} />
+        <SList>
+          {defaultItems.map((item) => (
+            <SLink key={item.name} to={item.link}>
+              {item.name}
+            </SLink>
+          ))}
+        </SList>
       </SNavigation>
     </>
   );

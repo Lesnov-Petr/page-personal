@@ -36,6 +36,7 @@ export const SBox = styled.div.attrs({ className: "hero__box" })`
 
 export const SBoxTitle = styled.div.attrs({ className: "hero__titleBox" })`
   display: flex;
+  max-width: 50%;
   flex-direction: column;
 `;
 
@@ -43,8 +44,9 @@ export const SHeroTitle = styled.h1.attrs({ className: "hero__title" })`
   ${fontMixin.logo}
 `;
 
-export const SBoxSubTitle = styled.div`
+export const SBoxSubTitle = styled.div.attrs({ className: "hero__quote" })`
   display: flex;
+
   align-items: center;
   color: ${color.accent};
 `;

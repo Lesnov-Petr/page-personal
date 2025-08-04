@@ -3,7 +3,7 @@ import { color, fontMixin } from "../../assets/globalStyles";
 import { ReactComponent as LineIcon } from "../../assets/images/line.svg";
 import { ReactComponent as ArrowIcon } from "../../assets/images/arrow.svg";
 
-export const SBody = styled.div`
+export const SBody = styled.div.attrs({ className: "content" })`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -12,14 +12,15 @@ export const SBody = styled.div`
   padding: 0 10px;
 `;
 
-export const SBox = styled.div`
+export const SBox = styled.div.attrs({ className: "content__box" })`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 70%;
+  padding: 0 20px;
 `;
 
-export const SBoxLink = styled.div`
+export const SBoxLink = styled.div.attrs({ className: "content__boxLink" })`
   display: flex;
   align-items: center;
   color: ${color.accent};
@@ -35,11 +36,11 @@ export const SBoxSubTitle = styled.div`
   color: ${color.accent};
 `;
 
-export const SList = styled.ul`
-  /* width: 75vw; */
+export const SList = styled.ul.attrs({ className: "content__list" })`
+  /* &:nth-child() */
 `;
 
-export const SItem = styled.li`
+export const SItem = styled.li.attrs({ className: "content__item" })`
   display: flex;
   margin-bottom: 150px;
 
@@ -52,7 +53,7 @@ export const SItem = styled.li`
   }
 `;
 
-export const STitle = styled.h3.attrs({ className: "body__title" })`
+export const STitle = styled.h3.attrs({ className: "content__title" })`
   ${fontMixin.logo};
 `;
 
@@ -65,11 +66,11 @@ export const SText = styled.p`
   margin-bottom: 27px;
 `;
 
-export const SLink = styled.a`
+export const SLink = styled.a.attrs({ className: "content__link" })`
   margin-right: 10px;
 `;
 
-export const SImg = styled.img`
+export const SImg = styled.img.attrs({ className: "content__img" })`
   width: auto;
   height: 90vh;
   object-fit: contain;

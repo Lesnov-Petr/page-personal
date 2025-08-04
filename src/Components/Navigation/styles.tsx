@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { fontMixin, color, cubic, device } from "../../assets/globalStyles";
+import { NavLink } from "react-router-dom";
 
 export const SNavigation = styled.div.attrs({ className: "navigation" })<{}>`
   display: flex;
+  height: 25px;
 
   @media ${device.tabletMax} {
     position: fixed;
@@ -27,21 +29,31 @@ export const SNavigation = styled.div.attrs({ className: "navigation" })<{}>`
   }
 `;
 
-export const SItem = styled.li.attrs({ className: "navigation__item" })<{}>`
-  ${fontMixin.standart}
-  margin-right: 40px;
-
-  &:first-child {
-    margin-left: 0;
-  }
+export const SList = styled.ul.attrs({ className: "navigation__list" })`
+  display: flex;
 
   @media ${device.tabletMax} {
-    margin: 15px 0;
+    flex-direction: column;
   }
 `;
 
-export const SLink = styled.a.attrs({ className: "navigation__link" })<{}>`
+export const SLink = styled(NavLink).attrs({
+  className: "navigation__link",
+})<{}>`
+  ${fontMixin.standart}
   transition: color 250ms ${cubic};
+  margin-right: 10px;
+
+  &.active {
+    padding-bottom: 5px;
+    color: ${color.accent};
+    font-weight: bold;
+    border-bottom: 2px solid ${color.accent};
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   &:hover,
   &:focus {
@@ -50,6 +62,8 @@ export const SLink = styled.a.attrs({ className: "navigation__link" })<{}>`
 
   @media ${device.tabletMax} {
     font-size: 24px;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 `;
 

@@ -1,3 +1,5 @@
 import styled from "styled-components";
 
-export const SResume = styled.div.attrs({ className: "pageResume" })``;
+export const SResume = styled.div.attrs({ className: "pageResume" })`
+  width: 100%;
+`;

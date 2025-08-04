@@ -1,12 +1,15 @@
 import { SResume } from "./styles";
 import { Header } from "../../Components/Header";
+import Container from "../../Components/Container";
 
 const Resume: React.FC<{}> = () => {
   return (
-    <SResume>
-      <Header />
-      РЕЗЮМЕ
-    </SResume>
+    <Container>
+      <SResume>
+        <Header />
+        РЕЗЮМЕ
+      </SResume>
+    </Container>
   );
 };
 

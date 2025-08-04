@@ -1,8 +1,10 @@
 import { lazy } from "react";
+
 const About = lazy(() => import("../pages/About"));
 const Main = lazy(() => import("../pages/Main"));
 const Hobby = lazy(() => import("../pages/Hobby"));
 const Resume = lazy(() => import("../pages/Resume"));
+const Travel = lazy(() => import("../pages/Travel"));
 
 interface Route {
   id: string;
@@ -45,6 +47,14 @@ export const routes: Route[] = [
     label: "Resume",
     path: "/resume",
     component: Resume,
+    isProtected: false,
+    redirectTo: "/",
+  },
+  {
+    id: "travel",
+    label: "Travel",
+    path: "/travel",
+    component: Travel,
     isProtected: false,
     redirectTo: "/",
   },

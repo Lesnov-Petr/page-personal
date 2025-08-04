@@ -1,16 +1,16 @@
-import { SHobby } from "./styles";
+import { STravel } from "./styles";
 import { Header } from "../../Components/Header";
 import Container from "../../Components/Container";
 
-const Hobby: React.FC<{}> = () => {
+const Travel: React.FC<{}> = () => {
   return (
     <Container>
-      <SHobby>
+      <STravel>
         <Header />
-        HOBBY
-      </SHobby>
+        Путешествие
+      </STravel>
     </Container>
   );
 };
 
-export default Hobby;
+export default Travel;
